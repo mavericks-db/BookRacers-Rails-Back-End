@@ -5,8 +5,8 @@ class CreateMotorcycles < ActiveRecord::Migration[7.0]
       t.string :brand
       t.string :model
       t.references :category, null: false, foreign_key: true
-      t.date :year
-      t.text :image
+      t.string :year
+      t.string :image
       t.integer :rental_price
 
       t.timestamps

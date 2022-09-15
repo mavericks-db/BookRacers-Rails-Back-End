@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_050029) do
     t.string "brand"
     t.string "model"
     t.bigint "category_id", null: false
-    t.date "year"
-    t.text "image"
+    t.string "year"
+    t.string "image"
     t.integer "rental_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

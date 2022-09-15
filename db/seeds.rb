@@ -16,7 +16,9 @@ p "Creating categories"
 Category.create(catname: 'Sport')
 
 p "Creating motorcycles"
-Motorcycle.create(articleID: 973642, brand: 'Acabion', model: 'GTBO 600 Daytona-VI', category_id: 1, year: '2011', image: 'http://api-motorcycle.makingdatameaningful.com/files/Acabion/2011/GTBO%20600%20Daytona-VI/Acabion_2011_GTBO%20600%20Daytona-VI.jpeg', rental_price: 100)
+Motorcycle.create(articleID: 389572, brand: 'Daelim', model: 'Altino 125 ES', category_id: 1, year: '2004', image: 'http://api-motorcycle.makingdatameaningful.com/files/Daelim/2004/Altino 125 ES/Daelim_2004_Altino 125 ES.jpg', rental_price: 100)
+Motorcycle.create(articleID: 200985, brand: 'Daelim', model: 'Daystar 125 FI', category_id: 1, year: '2011', image: 'http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/Daystar 125 FI/Daelim_2011_Daystar 125 FI.jpg', rental_price: 150)
+Motorcycle.create(articleID: 344347, brand: 'Daelim', model: 'RoadSport', category_id: 1, year: '2015', image: 'http://api-motorcycle.makingdatameaningful.com/files/Daelim/2015/RoadSport/Daelim_2015_RoadSport.jpg', rental_price: 120)
 
 p "Creating reservations"
 Reservation.create(motorcycle_id: 1, user_id: 1, total_price: 100)

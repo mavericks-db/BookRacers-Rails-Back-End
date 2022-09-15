@@ -3,4 +3,9 @@ class Api::V1::CategoriesController < ApplicationController
     @categories = Category.all
     render json: @categories
   end
+
+  def show
+    @motorcycles = Motorcycle.where(category_id: params[:id])
+    render json: @motorcycles
+  end
 end

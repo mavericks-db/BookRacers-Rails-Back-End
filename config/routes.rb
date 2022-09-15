@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'categories/index'
   namespace :api do
     namespace :v1 do
+      resources :categories
       resources :motorcycles
     end
   end

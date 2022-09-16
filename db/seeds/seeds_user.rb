@@ -1,2 +1,2 @@
-User.create(name: 'Admin_User', admin: true)
-User.create(name: 'New_User', admin: false)
+User.create(name: 'Admin_User', admin: true, email: "admin@email.com", password: "123456", password_confirmation: "123456")
+User.create(name: 'New_User', admin: false, email: "user@email.com", password: "123456", password_confirmation: "123456")

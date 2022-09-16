@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.describe Reservation, type: :model do
   before :each do
     @user = User.create(name: 'John', email: 'user@gmail.com', password: 'password123',
@@ -12,8 +12,8 @@ RSpec.describe Reservation, type: :model do
   context 'validations' do
     it 'should be valid with valid attributes' do
       @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, start_date: Date.today,
-      end_date: Date.today + 1.day, city: 'Manila')
-                                    
+                                     end_date: Date.today + 1.day, city: 'Manila')
+
       @reservation.save
       expect(@reservation).to be_valid
     end
@@ -64,3 +64,4 @@ RSpec.describe Reservation, type: :model do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

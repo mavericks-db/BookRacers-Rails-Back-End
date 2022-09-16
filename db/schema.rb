@@ -37,6 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_143727) do
     t.bigint "motorcycle_id", null: false
     t.bigint "user_id", null: false
     t.integer "total_price"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["motorcycle_id"], name: "index_reservations_on_motorcycle_id"

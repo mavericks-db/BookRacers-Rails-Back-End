@@ -1,3 +1,4 @@
+require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,11 +10,10 @@
 p "Seed started"
 
 p "Creating users"
-User.create(name: 'Admin_User', admin: true)
-User.create(name: 'New_User', admin: false)
+require File.expand_path('db/seeds/seeds_user', Rails.root)
 
 p "Creating categories"
-Category.create(catname: 'Sport')
+require File.expand_path('db/seeds/seeds_category', Rails.root)
 
 p "Creating motorcycles"
 @motorcycles = [
@@ -53,10 +53,20 @@ end
 p "Creating reservations"
 Reservation.create(motorcycle_id: 1, user_id: 1, total_price: 100, start_date: Date.today, end_date: Date.today + 1.day, city: 'Amsterdam')
 
+require File.expand_path('db/seeds/seeds_sports', Rails.root)
+require File.expand_path('db/seeds/seeds_scooters', Rails.root)
+require File.expand_path('db/seeds/seeds_nakedbikes', Rails.root)
+require File.expand_path('db/seeds/seeds_customcruisers', Rails.root)
+require File.expand_path('db/seeds/seeds_crossmotocross', Rails.root)
+require File.expand_path('db/seeds/seeds_supermotard', Rails.root)
+require File.expand_path('db/seeds/seeds_minibikesport', Rails.root)
+require File.expand_path('db/seeds/seeds_minibikecross', Rails.root)
+require File.expand_path('db/seeds/seeds_classics', Rails.root)
+
+
 p "------------------"
 
 p "Created #{User.count} users"
 p "Created #{Category.count} categories"
 p "Created #{Motorcycle.count} motorcycles"
-p "Created #{Reservation.count} reservations"
 p "Seed finished"

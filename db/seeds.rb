@@ -51,7 +51,7 @@ p "Creating motorcycles"
 end
 
 p "Creating reservations"
-Reservation.create(motorcycle_id: 1, user_id: 1, total_price: 100)
+Reservation.create(motorcycle_id: 1, user_id: 1, total_price: 100, start_date: Date.today, end_date: Date.today + 1.day, city: 'Amsterdam')
 
 p "------------------"
 

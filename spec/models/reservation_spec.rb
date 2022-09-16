@@ -11,22 +11,44 @@ RSpec.describe Reservation, type: :model do
   end
   context 'validations' do
     it 'should be valid with valid attributes' do
-      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, created_at: Date.today,
-                                     updated_at: Date.today + 1.day)
+      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, start_date: Date.today,
+      end_date: Date.today + 1.day, city: 'Manila')
+                                    
       @reservation.save
       expect(@reservation).to be_valid
     end
 
     it 'should be invalid without a user' do
-      @reservation = Reservation.new(user_id: nil, motorcycle_id: @motorcycle.id, created_at: Date.today,
-                                     updated_at: Date.today + 1.day)
+      @reservation = Reservation.new(user_id: nil, motorcycle_id: @motorcycle.id, start_date: Date.today,
+                                     end_date: Date.today + 1.day)
       @reservation.save
       expect(@reservation).to_not be_valid
     end
 
     it 'should be invalid without a motorcycle' do
-      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: nil, created_at: Date.today,
-                                     updated_at: Date.today + 1.day)
+      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: nil, start_date: Date.today,
+                                     end_date: Date.today + 1.day)
+      @reservation.save
+      expect(@reservation).to_not be_valid
+    end
+
+    it 'should be invalid without a start date' do
+      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, start_date: nil,
+                                     end_date: Date.today + 1.day)
+      @reservation.save
+      expect(@reservation).to_not be_valid
+    end
+
+    it 'should be invalid without an end date' do
+      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, start_date: Date.today,
+                                     end_date: nil)
+      @reservation.save
+      expect(@reservation).to_not be_valid
+    end
+
+    it 'should be invalid without a city' do
+      @reservation = Reservation.new(user_id: @user.id, motorcycle_id: @motorcycle.id, start_date: Date.today,
+                                     end_date: Date.today + 1.day, city: nil)
       @reservation.save
       expect(@reservation).to_not be_valid
     end

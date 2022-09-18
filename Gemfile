@@ -50,8 +50,6 @@ gem 'bootsnap', require: false
 
 gem 'rubocop'
 
-gem 'devise'
-
 gem 'jwt'
 
 gem 'rack-cors'

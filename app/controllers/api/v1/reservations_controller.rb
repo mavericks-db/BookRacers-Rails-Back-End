@@ -10,27 +10,30 @@ class Api::V1::ReservationsController < ApplicationController
     end
 
     def create
-        @motorcycle = Motorcycle.find(params[:id])
+        # @motorcycle = Motorcycle.find(params[:id])
         @reservation = Reservation.new(reservation_params)
-        @reservation.motorcycle_id = @motorcycle.id
-        @reservation.user_id = current_user.id
-        @reservation.total_price =
+        # @reservation.motorcycle_id = @motorcycle.id
+        # @reservation.user_id = current_user.id
+        # @reservation.total_price = 
       if  @reservation.save
-          render json: status: :success
-      else
-        render json: status: :unsuccessful
-      end
+        render json: {message: 'reservation created'}, status: :created 
+     else
+        render json: { error: 'Unable to create reservation' }, status: :unprocessable_entity   
+        end
     end
 
     def destroy
-        Reservation.find(params[:id]).destroy
-        render json: status: :deleted
+        if Reservation.find(params[:id]).destroy 
+            render json: {message: 'reservation deleted'}, status: :deleted 
+        else
+            render json: { error: 'Unable to delete reservation' }, status: :unprocessable_entity   
+        end 
     end
 
     private
-    
+
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date, :city)
+      params.require(:reservation).permit(:motorcycle_id, :user_id, :total_price, :start_date, :end_date, :city)
     end
 
   end

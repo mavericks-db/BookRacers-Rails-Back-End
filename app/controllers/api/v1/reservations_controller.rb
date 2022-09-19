@@ -5,8 +5,13 @@ class Api::V1::ReservationsController < ApplicationController
     end
 
     def show
-        @reserved_motorcycles = Reservation.where(user_id: params[:user_id])
-        render json: @reserved_motorcycles
+        @reserved_motorcycles = Reservation.where(id: params[:id])
+        if @reserved_motorcycles
+            render json: @reserved_motorcycles
+        else
+            render json: { error: 'Unable to find your reservation' }, status: :unprocessable_entity   
+        end
+
     end
 
     def create
@@ -24,7 +29,7 @@ class Api::V1::ReservationsController < ApplicationController
 
     def destroy
         if Reservation.find(params[:id]).destroy 
-            render json: {message: 'reservation deleted'}, status: :deleted 
+            render json: {message: 'reservation deleted'}
         else
             render json: { error: 'Unable to delete reservation' }, status: :unprocessable_entity   
         end 

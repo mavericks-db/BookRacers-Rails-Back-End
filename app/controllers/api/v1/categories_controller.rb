@@ -24,6 +24,15 @@ class Api::V1::CategoriesController < ApplicationController
         render json: {error: 'Error creating category'}
       end
     end
+
+    def destroy
+      @category = Category.find_by_id(params[:id])
+      if @category.destroy
+        render json: {message: "Category deleted successfully"}
+      else
+        render json: {error: 'Error deleting category'}
+      end
+    end
   end
 
   

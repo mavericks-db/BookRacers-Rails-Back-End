@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :categories
       resources :motorcycles
+      resources :reservations
       post '/signup', to: 'users#create'
       post '/login', to: 'sessions#login'
       get '/logout', to: 'sessions#destroy'

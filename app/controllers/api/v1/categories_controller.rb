@@ -1,11 +1,21 @@
 class Api::V1::CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    render json: @categories
+    if @categories
+      render json: {category: @categories}
+    else
+      render json: {error: 'No categories yet'}
+    end
   end
 
   def show
-    @motorcycles = Motorcycle.where(category_id: params[:id])
-    render json: @motorcycles
+    @motorcycles = Motorcycle.where(id: params[:id])
+    if @motorcycles
+      render json: {motorcycle: @motorcycles}
+    else
+      render json: {error: 'Motorcycle not found'}
+    end
   end
+
+  
 end

@@ -27,5 +27,12 @@ class Api::V1::MotorcyclesController < ApplicationController
     end
   end
 
-  
+  def destroy
+    @motorcycle = Motorcycle.find_by_id(params[:id])
+    if @motorcycle.destroy
+      render json: {message: "Motorcycle deleted successfully"}
+    else
+      render json: {error: 'Error deleting motorcycle'}
+    end
+  end
 end

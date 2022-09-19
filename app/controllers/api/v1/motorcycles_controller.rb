@@ -2,9 +2,9 @@ class Api::V1::MotorcyclesController < ApplicationController
   def index
     @motorcycles = Motorcycle.all
     if @motorcycles
-      render json: {motorcycle: @motorcycles}
+      render json: { motorcycle: @motorcycles }
     else
-      render json: {error: 'No motorcycles yet'}
+      render json: { error: 'No motorcycles yet' }
     end
   end
 
@@ -21,18 +21,18 @@ class Api::V1::MotorcyclesController < ApplicationController
   def create
     @motorcycle = Motorcycle.new(motorcycle_params)
     if @motorcycle.save
-      render json: {message: "Motorcycle created successfully"}
+      render json: { message: 'Motorcycle created successfully' }
     else
-      render json: {error: 'Error creating motorcycle'}
+      render json: { error: 'Error creating motorcycle' }
     end
   end
 
   def destroy
     @motorcycle = Motorcycle.find_by_id(params[:id])
     if @motorcycle.destroy
-      render json: {message: "Motorcycle deleted successfully"}
+      render json: { message: 'Motorcycle deleted successfully' }
     else
-      render json: {error: 'Error deleting motorcycle'}
+      render json: { error: 'Error deleting motorcycle' }
     end
   end
 

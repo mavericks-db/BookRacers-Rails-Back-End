@@ -35,4 +35,8 @@ class Api::V1::MotorcyclesController < ApplicationController
       render json: {error: 'Error deleting motorcycle'}
     end
   end
+
+  def motorcycle_params
+    params.require(:motorcycle).permit(:image, :category_id, :rental_price, :year, :brand, :model)
+  end
 end

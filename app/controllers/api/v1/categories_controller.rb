@@ -15,6 +15,15 @@ class Api::V1::CategoriesController < ApplicationController
     else
       render json: {error: 'Motorcycle not found'}
     end
+
+    def create
+      @category = Category.new(category_params)
+      if @category.save
+        render json: {message: @category}, status: :ok
+      else
+        render json: {error: 'Error creating category'}
+      end
+    end
   end
 
   

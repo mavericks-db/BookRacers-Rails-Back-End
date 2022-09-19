@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :categories
       resources :motorcycles
-      # resources :reservations
       post '/signup', to: 'users#create'
       post '/login', to: 'sessions#login'
       get '/logout', to: 'sessions#destroy'
@@ -23,8 +22,4 @@ Rails.application.routes.draw do
     end
   end
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

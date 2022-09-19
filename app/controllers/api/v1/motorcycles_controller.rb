@@ -18,5 +18,14 @@ class Api::V1::MotorcyclesController < ApplicationController
     end
   end
 
+  def create
+    @motorcycle = Motorcycle.new(motorcycle_params)
+    if @motorcycle.save
+      render json: {message: "Motorcycle created successfully"}
+    else
+      render json: {error: 'Error creating motorcycle'}
+    end
+  end
+
   
 end

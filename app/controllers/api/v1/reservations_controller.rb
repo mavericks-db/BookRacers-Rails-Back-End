@@ -22,7 +22,13 @@ class Api::V1::ReservationsController < ApplicationController
       end
     end
 
+    def destroy
+        Reservation.find(params[:id]).destroy
+        render json: status: :deleted
+    end
+
     private
+    
     def reservation_params
       params.require(:reservation).permit(:start_date, :end_date, :city)
     end

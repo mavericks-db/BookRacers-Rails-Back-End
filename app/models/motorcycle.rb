@@ -1,6 +1,6 @@
 class Motorcycle < ApplicationRecord
   belongs_to :category
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations
 
   validates :brand, :model, :year, :image, presence: true

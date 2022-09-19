@@ -10,7 +10,7 @@ require 'faker'
 p "Seed started"
 
 p "Creating users"
-# require File.expand_path('db/seeds/seeds_user', Rails.root)
+require File.expand_path('db/seeds/seeds_user', Rails.root)
 
 p "Creating categories"
 require File.expand_path('db/seeds/seeds_category', Rails.root)

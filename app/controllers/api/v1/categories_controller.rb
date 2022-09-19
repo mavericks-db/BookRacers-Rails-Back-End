@@ -33,6 +33,12 @@ class Api::V1::CategoriesController < ApplicationController
         render json: {error: 'Error deleting category'}
       end
     end
+
+    private
+
+  def category_params
+    params.require(:category).permit(:catname)
+  end
   end
 
   

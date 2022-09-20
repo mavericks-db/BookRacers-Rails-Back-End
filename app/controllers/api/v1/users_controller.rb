@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def create
-    @user = User.create(user_params)
+    @user = User.create!(user_params)
     if @user.valid?
       token = encode_token({ user_id: @user.id })
       render json: { user: {
@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
         admin: @user.admin
       }, token: }, status: :ok
     else
-      render json: { error: 'Unable to create user' }, status: :unprocessable_entity
+      render json: { error: @user.errors.messages }, status: :unprocessable_entity
     end
   end
 

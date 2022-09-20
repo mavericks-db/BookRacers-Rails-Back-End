@@ -1,17 +1,17 @@
 class Api::V1::CategoriesController < ApplicationController
   def index
-    categories = Category.all.includes([:motorcycles])
-    if categories
-      render json: categories
+    @categories = Category.all
+    if @categories
+      render json: @categories
     else
       render json: { error: 'No categories yet' }
     end
   end
 
   def show
-    category = Category.where(id: params[:id])
-    if category
-      render json: category
+    @category = Category.where(id: params[:id])
+    if @category
+      render json: @category
     else
       render json: { error: 'Motorcycle not found' }
     end
@@ -38,6 +38,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:catname)
+    params.require(:category).permit(:catname, :img)
   end
 end

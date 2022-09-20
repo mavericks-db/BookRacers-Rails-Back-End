@@ -1,13 +1,13 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
-    render json: @reservations
+    render json: { reservation: @reservations }
   end
 
   def show
-    @reserved_motorcycles = Reservation.where(id: params[:id])
-    if @reserved_motorcycles
-      render json: @reserved_motorcycles
+    reserved_motorcycles = Reservation.where(id: params[:id])
+    if reserved_motorcycles
+      render json: { reservation: reserved_motorcycles }
     else
       render json: { error: 'Unable to find your reservation' }, status: :unprocessable_entity
     end

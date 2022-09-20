@@ -1,30 +1,39 @@
 @categories = [
     {
-      "catname": "Sport"
+      "catname": "Sport",
+      "image":"./assets/cat1.jpg",
     },
     {
-      "catname": "Scooter"
+      "catname": "Scooter",
+      "image":"./assets/cat2.jpg",
     },
     {
-      "catname": "Naked bike"
+      "catname": "Naked bike",
+      "image":"./assets/cat3.jpg",
     },
     {
-      "catname": "Custom-cruiser"
+      "catname": "Custom-cruiser",
+      "image":"./assets/cat4.jpg",
     },
     {
-      "catname": "Cross-motocross"
+      "catname": "Cross-motocross",
+      "image":"./assets/cat5.jpg",
     },
     {
-      "catname": "Super motard"
+      "catname": "Super motard",
+      "image":"./assets/cat6.jpg",
     },
     {
-      "catname": "Minibike-sport"
+      "catname": "Minibike-sport",
+      "image":"./assets/cat7.jpg",
     },
     {
-      "catname": "Minibike-cross"
+      "catname": "Minibike-cross",
+      "image":"./assets/cat8.jpg",
     },
     {
-      "catname": "Classic"
+      "catname": "Classic",
+      "image":"./assets/cat9.jpg",
     }
 ]
 

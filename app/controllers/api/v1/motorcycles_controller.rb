@@ -2,7 +2,7 @@ class Api::V1::MotorcyclesController < ApplicationController
   def index
     motorcycles = Motorcycle.order(created_at: :desc).includes([:reservations])
     if motorcycles
-      render json: motorcycles
+      render json: motorcycles, include: [:reservations]
     else
       render json: { error: 'No motorcycles yet' }
     end
@@ -11,7 +11,7 @@ class Api::V1::MotorcyclesController < ApplicationController
   def show
     motorcycle = Motorcycle.find_by_id(params[:id])
     if motorcycle
-      render json: motorcycle
+      render json: motorcycle, include: [:reservations]
     else
       render json: { error: 'Unable to find motorcycle' }
     end

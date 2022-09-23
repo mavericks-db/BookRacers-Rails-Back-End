@@ -1,6 +1,8 @@
 class Api::V1::CategoriesController < ApplicationController
+  before_action :logged_in
+
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(%i[motorcycles image_attachment])
     if @categories
       render json: @categories
     else

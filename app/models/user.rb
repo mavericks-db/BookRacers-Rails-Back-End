@@ -5,6 +5,4 @@ class User < ApplicationRecord
 
   validates :name, :password, presence: true
   validates :email, presence: true, uniqueness: true
-
-  alias_attribute :password_digest, :encrypted_password
 end

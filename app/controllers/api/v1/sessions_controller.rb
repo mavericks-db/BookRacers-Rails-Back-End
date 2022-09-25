@@ -16,6 +16,10 @@ class Api::V1::SessionsController < ApplicationController
     render json: current_user, status: :ok
   end
 
+  def logout
+    render json: { message: 'Successfully logged out.' }, status: :ok
+  end
+
   private
 
   def user_params

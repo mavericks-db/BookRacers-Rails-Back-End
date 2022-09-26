@@ -1,5 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
-  before_action :logged_in
+  before_action :logged_in, only: %i[index show]
 
   def index
     @categories = Category.all.includes(%i[motorcycles image_attachment])
@@ -29,9 +29,8 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find_by_id(params[:id])
-    if @category.destroy
-      render json: { message: 'Category deleted successfully' }
+    if Category.find(params[:id]).destroy
+      render json: { message: 'Category deleted' }
     else
       render json: { error: 'Error deleting category' }
     end

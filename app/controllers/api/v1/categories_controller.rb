@@ -1,5 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
-  before_action :logged_in, only: %i[index show]
+  before_action :logged_in
 
   def index
     @categories = Category.all.includes(%i[motorcycles image_attachment])

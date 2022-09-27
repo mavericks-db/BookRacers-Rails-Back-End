@@ -7,6 +7,7 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/A-Four/Daelim_2011_A-Four.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
+    "reserved": false,
   },
   {
     "articleID": 275877,
@@ -16,6 +17,7 @@
     "year": "2016",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2016/Aroma 125/Daelim_2016_Aroma 125.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
+    "reserved": false,
   },
   {
     "articleID": 501232,
@@ -25,6 +27,7 @@
     "year": "2008",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2017/B-Bone/Daelim_2017_B-Bone.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
+    "reserved": false,
   },
 
   {
@@ -35,6 +38,7 @@
     "year": "2017",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2016/Beagle 50/Daelim_2016_Beagle 50.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
+    "reserved": false,
   },
   {
     "articleID": 594054,
@@ -44,7 +48,8 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2017/Besbi/Daelim_2017_Besbi.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+    "reserved": false,
+  }
 ]
 
 @crossmotocross.each do |cross|

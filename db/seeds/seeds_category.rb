@@ -5,7 +5,7 @@
     },
     {
       "catname": "Scooter",
-      "img":"http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/A-Four/Daelim_2011_A-Four.jpg",
+      "img":"http://api-motorcycle.makingdatameaningful.com/files/Daelim/2016/Aroma 125/Daelim_2016_Aroma 125.jpeg",
     },
     {
       "catname": "Naked bike",

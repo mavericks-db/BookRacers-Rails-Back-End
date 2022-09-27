@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get '/motorcycles/:id', to: 'motorcycles#show'
       post '/add_motorcycle', to: 'motorcycles#create'
       delete '/del_motorcycle', to: 'motorcycles#destroy'
+      patch '/update_motorcycle', to: 'motorcycles#update'
 
       # For categories CRUD
       get '/categories', to: 'categories#index'

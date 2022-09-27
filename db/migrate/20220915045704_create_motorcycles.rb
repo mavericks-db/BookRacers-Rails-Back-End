@@ -8,6 +8,7 @@ class CreateMotorcycles < ActiveRecord::Migration[7.0]
       t.string :year
       t.string :image
       t.integer :rental_price
+      t.boolean :reserved
 
       t.timestamps
     end

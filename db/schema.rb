@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_143052) do
     t.string "year"
     t.string "image"
     t.integer "rental_price"
+    t.boolean "reserved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_motorcycles_on_category_id"

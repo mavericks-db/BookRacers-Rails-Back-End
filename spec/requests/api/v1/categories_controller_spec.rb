@@ -36,9 +36,9 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
         expect(current_path).to eq(api_v1_categories_path)
       end
 
-      # it 'assigns all categories to @categories' do
-      #   expect(@categories).to eq(Category.all)
-      # end
+      it 'assigns all categories to @categories' do
+        expect(@categories).to eq(Category.all)
+      end
     end
   end
 end

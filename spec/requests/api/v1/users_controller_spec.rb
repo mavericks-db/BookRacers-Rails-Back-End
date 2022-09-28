@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::CategoriesController, type: :request do
+RSpec.describe Api::V1::UsersController, type: :request do
   describe 'GET #index' do
     context 'User is not authenticated' do
       before :each do

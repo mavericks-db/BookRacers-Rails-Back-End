@@ -1,6 +1,6 @@
 require 'json'
 
-def login
+def signup
   post api_v1_signup_path, params: {
     user: {
       name: 'John Doe',

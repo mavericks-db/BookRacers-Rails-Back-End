@@ -22,7 +22,7 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
 
     context 'User is authenticated' do
       before :each do
-        auth_token = login
+        auth_token = signup
         headers = { "ACCEPT" => "application/json", "Authorization" => auth_token }
         get api_v1_categories_path, headers: headers
       end

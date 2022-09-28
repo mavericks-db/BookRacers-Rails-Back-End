@@ -15,6 +15,19 @@ def signup
   res['jwt']
 end
 
+def login
+  auth_token = signup
+  headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+  post api_v1_login_path, params: {
+    user: {
+      username: 'John Doe'
+    }
+  }, headers: headers
+  @categories = Category.all
+  res = JSON.parse response.body
+  res['jwt']
+end
+
 def current_path
   request.env['PATH_INFO']
 end

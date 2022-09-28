@@ -2,7 +2,7 @@ class Api::V1::CategoriesController < ApplicationController
   before_action :logged_in
 
   def index
-    @categories = Category.includes([:motorcycles, :picture_attachment]).order(created_at: :desc)
+    @categories = Category.includes(%i[motorcycles picture_attachment]).order(created_at: :desc)
     if @categories
       render json: @categories
     else
@@ -11,7 +11,7 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.where(id: params[:id])
+    @category = Category.where(id: params[:id]).includes([:picture_attachment])
     if @category
       render json: @category
     else

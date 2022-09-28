@@ -2,8 +2,8 @@ class Api::V1::MotorcyclesController < ApplicationController
   before_action :logged_in
 
   def index
-    motorcycles = Motorcycle.includes([:picture_attachment, :reservations]).order(created_at: :desc)
-  
+    motorcycles = Motorcycle.includes(%i[picture_attachment reservations]).order(created_at: :desc)
+
     if motorcycles
       render json: motorcycles, include: [:reservations]
     else

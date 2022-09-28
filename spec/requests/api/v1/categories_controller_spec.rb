@@ -31,10 +31,10 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
         expect(response).to have_http_status(:ok)
       end
 
-      # it 'redirects to the home page' do
-      #   current_uri = request.env['PATH_INFO']
-      #   expect(current_path).to eq(api_v1_categories_path)
-      # end
+      it 'redirects to the home page' do
+        current_uri = request.env['PATH_INFO']
+        expect(current_path).to eq(api_v1_categories_path)
+      end
 
       # it 'assigns all categories to @categories' do
       #   expect(@categories).to eq(Category.all)

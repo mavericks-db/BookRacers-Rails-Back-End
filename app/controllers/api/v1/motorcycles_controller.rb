@@ -39,14 +39,20 @@ class Api::V1::MotorcyclesController < ApplicationController
 
   def update
     motorcycle = Motorcycle.find_by_id(params[:id])
-    if motorcycle.update_column(:reserved, motorcycle_params[:reserved])
+    if motorcycle.update(reserved_params)
       render json: { message: 'Motorcycle updated successfully' }
     else
       render json: { error: 'Error updating motorcycle' }
     end
   end
 
+  private
+
   def motorcycle_params
     params.require(:motorcycle).permit(:image, :category_id, :rental_price, :year, :brand, :model, :reserved)
+  end
+
+  def reserved_params
+    params.require(:motorcycle).permit(:reserved, :id)
   end
 end

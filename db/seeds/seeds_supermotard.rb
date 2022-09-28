@@ -7,7 +7,6 @@
     "year": "2007",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2007/E-Five/Daelim_2007_E-Five.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 398175,
@@ -17,7 +16,6 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/Freewing 125/Daelim_2011_Freewing 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 638631,
@@ -27,7 +25,6 @@
     "year": "2004",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2004/History/Daelim_2004_History.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 77061,
@@ -37,7 +34,6 @@
     "year": "2004",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2004/NS 125 DLX/Daelim_2004_NS 125 DLX.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 762709,
@@ -47,7 +43,6 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/Otello 125/Daelim_2011_Otello 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   }
 ]
 

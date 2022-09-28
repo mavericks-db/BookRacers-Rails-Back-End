@@ -15,6 +15,6 @@ def login
   res['jwt']
 end
 
-# def current_path
-#   request.env['PATH_INFO']
-# end
+def current_path
+  request.env['PATH_INFO']
+end

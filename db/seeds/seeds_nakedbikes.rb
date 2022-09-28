@@ -7,7 +7,6 @@
     "year": "2015",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2015/RoadSport 125/Daelim_2015_RoadSport 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 215814,
@@ -17,7 +16,6 @@
     "year": "2010",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2010/Roadwin/Daelim_2010_Roadwin.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 597540,
@@ -27,7 +25,6 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/Roadwin 125/Daelim_2011_Roadwin 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 171212,
@@ -37,7 +34,6 @@
     "year": "2013",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2013/VJF 125 RoadSport/Daelim_2013_VJF 125 RoadSport.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 91441,
@@ -47,7 +43,6 @@
     "year": "2013",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2013/VJF 125 RoadWin/Daelim_2013_VJF 125 RoadWin.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   }
 ]
 

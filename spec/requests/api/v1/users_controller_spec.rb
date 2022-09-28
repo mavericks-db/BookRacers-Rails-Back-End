@@ -16,15 +16,15 @@ RSpec.describe Api::V1::UsersController, type: :request do
       end
 
       it 'gives an empty array' do
-        expect(response.body).to eq "[]"
+        expect(response.body).to eq '[]'
       end
     end
 
     context 'User is authenticated' do
       before :each do
         auth_token = signup
-        headers = { "ACCEPT" => "application/json", "Authorization" => auth_token }
-        get api_v1_users_path, headers: headers
+        headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+        get api_v1_users_path, headers:
       end
 
       it 'returns http success' do

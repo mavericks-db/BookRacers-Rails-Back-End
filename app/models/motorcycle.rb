@@ -5,4 +5,6 @@ class Motorcycle < ApplicationRecord
 
   validates :brand, :model, :year, :image, presence: true
   validates :rental_price, presence: true, numericality: { greater_than: 0 }
+
+  has_one_attached :picture
 end

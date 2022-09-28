@@ -43,7 +43,7 @@
     "year": "2017",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2017/VJF 250/Daelim_2017_VJF 250.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+  }
 ]
 
 @sports.each do |sport|

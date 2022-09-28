@@ -27,9 +27,9 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
         get api_v1_categories_path, headers: headers
       end
 
-      # it 'returns http success' do
-      #   expect(response).to have_http_status(:ok)
-      # end
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+      end
 
       # it 'redirects to the home page' do
       #   current_uri = request.env['PATH_INFO']

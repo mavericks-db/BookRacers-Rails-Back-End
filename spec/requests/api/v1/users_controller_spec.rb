@@ -1,30 +1,44 @@
-class Api::V1::UsersController < ApplicationController
-  def index
-    users = User.all
-    render json: users
-  end
+require 'rails_helper'
 
-  def show
-    user = User.find(params[:id])
-    render json: user
-  end
+RSpec.describe Api::V1::CategoriesController, type: :request do
+  describe 'GET #index' do
+    context 'User is not authenticated' do
+      before :each do
+        get api_v1_users_path
+      end
 
-  def create
-    user = User.new(user_params)
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+      end
 
-    if user.save
-      token = issue_token(user)
-      render json: { user: UserSerializer.new(user), jwt: token }
-    elsif user.errors.messages
-      render json: { error: user.errors.messages }
-    else
-      render json: { error: 'User could not be created. Please try again.' }
+      it 'assigns all categories to @categories' do
+        expect(assigns(:categories)).to_not eq(Category.all)
+      end
+
+      it 'gives an empty array' do
+        expect(response.body).to eq "[]"
+      end
     end
-  end
 
-  private
+    # context 'User is authenticated' do
+    #   before :each do
+    #     auth_token = login
+    #     headers = { "ACCEPT" => "application/json", "Authorization" => auth_token }
+    #     get api_v1_categories_path, headers: headers
+    #   end
 
-  def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :admin)
+    #   it 'returns http success' do
+    #     expect(response).to have_http_status(:ok)
+    #   end
+
+    #   it 'redirects to the home page' do
+    #     current_uri = request.env['PATH_INFO']
+    #     expect(current_path).to eq(api_v1_categories_path)
+    #   end
+
+    #   it 'assigns all categories to @categories' do
+    #     expect(@categories).to eq(Category.all)
+    #   end
+    # end
   end
 end

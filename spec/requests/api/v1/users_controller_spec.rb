@@ -20,25 +20,24 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
       end
     end
 
-    # context 'User is authenticated' do
-    #   before :each do
-    #     auth_token = login
-    #     headers = { "ACCEPT" => "application/json", "Authorization" => auth_token }
-    #     get api_v1_categories_path, headers: headers
-    #   end
+    context 'User is authenticated' do
+      before :each do
+        auth_token = login
+        headers = { "ACCEPT" => "application/json", "Authorization" => auth_token }
+        get api_v1_users_path, headers: headers
+      end
 
-    #   it 'returns http success' do
-    #     expect(response).to have_http_status(:ok)
-    #   end
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+      end
 
-    #   it 'redirects to the home page' do
-    #     current_uri = request.env['PATH_INFO']
-    #     expect(current_path).to eq(api_v1_categories_path)
-    #   end
+      it 'redirects to the home page' do
+        expect(current_path).to eq(api_v1_users_path)
+      end
 
-    #   it 'assigns all categories to @categories' do
-    #     expect(@categories).to eq(Category.all)
-    #   end
-    # end
+      it 'assigns all categories to @categories' do
+        expect(@categories).to eq(Category.all)
+      end
+    end
   end
 end

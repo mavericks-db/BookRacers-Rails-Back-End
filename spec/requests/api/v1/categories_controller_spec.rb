@@ -32,7 +32,6 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
       end
 
       it 'redirects to the home page' do
-        current_uri = request.env['PATH_INFO']
         expect(current_path).to eq(api_v1_categories_path)
       end
 

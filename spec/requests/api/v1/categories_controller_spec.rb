@@ -16,7 +16,7 @@ RSpec.describe Api::V1::CategoriesController, type: :request do
       end
 
       it 'gives an error message' do
-        expect(response.body).to eq "{\"error\":\"You are not logged in\"}"
+        expect(response.body).to eq '{"error":"You are not logged in"}'
       end
     end
 

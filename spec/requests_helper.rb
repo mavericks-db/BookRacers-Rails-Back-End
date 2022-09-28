@@ -1,5 +1,5 @@
 def login
-  headers = { "ACCEPT" => "application/json" }
+  headers = { 'ACCEPT' => 'application/json' }
   post api_v1_signup_path, params: {
     user: {
       name: 'John Doe',

@@ -40,4 +40,40 @@ RSpec.describe Api::V1::MotorcyclesController, type: :request do
       end
     end
   end
+
+  describe 'GET #show' do
+    context 'User is not authenticated' do
+      before :each do
+        get api_v1_motorcycles_path(1)
+      end
+
+      it 'returns http success' do
+        expect(response).to have_http_status(:forbidden)
+      end
+
+      it 'gives an error message' do
+        expect(response.body).to eq '{"error":"You are not logged in"}'
+      end
+    end
+
+    # context 'User is authenticated' do
+    #   before :each do
+    #     auth_token = signup
+    #     headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+    #     get api_v1_motorcycles_path, headers:
+    #   end
+
+    #   it 'returns http success' do
+    #     expect(response).to have_http_status(:ok)
+    #   end
+
+    #   it 'redirects to the home page' do
+    #     expect(current_path).to eq(api_v1_motorcycles_path)
+    #   end
+
+    #   it 'assigns all categories to @categories' do
+    #     expect(@categories).to eq(Category.all)
+    #   end
+    # end
+  end
 end

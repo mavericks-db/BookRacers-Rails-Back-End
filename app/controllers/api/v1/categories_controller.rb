@@ -2,7 +2,7 @@ class Api::V1::CategoriesController < ApplicationController
   before_action :logged_in
 
   def index
-    @categories = Category.all.order(created_at: :desc)
+    @categories = Category.includes([:motorcycles, :picture_attachment]).order(created_at: :desc)
     if @categories
       render json: @categories
     else
@@ -39,6 +39,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:catname, :image)
+    params.require(:category).permit(:catname, :image, :picture)
   end
 end

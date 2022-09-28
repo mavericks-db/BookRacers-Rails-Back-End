@@ -7,7 +7,6 @@
     "year": "2015",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2015/Daystar/Daelim_2015_Daystar.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 257372,
@@ -17,7 +16,6 @@
     "year": "2008",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2008/Daystar 125 F.I./Daelim_2008_Daystar 125 F.I..jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 895346,
@@ -27,7 +25,6 @@
     "year": "2001",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2001/VL 125 Classic/Daelim_2001_VL 125 Classic.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 833095,
@@ -37,7 +34,6 @@
     "year": "2000",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2000/VS 125/Daelim_2000_VS 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   },
   {
     "articleID": 439421,
@@ -47,7 +43,6 @@
     "year": "1999",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/1999/VT 125/Daelim_1999_VT 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-    "reserved": false,
   }
 ]
 

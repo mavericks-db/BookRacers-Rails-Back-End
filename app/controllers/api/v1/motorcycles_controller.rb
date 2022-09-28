@@ -3,7 +3,6 @@ class Api::V1::MotorcyclesController < ApplicationController
 
   def index
     motorcycles = Motorcycle.includes(%i[picture_attachment reservations]).order(created_at: :desc)
-
     if motorcycles
       render json: motorcycles, include: [:reservations]
     else
@@ -50,7 +49,7 @@ class Api::V1::MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:picture, :category_id, :rental_price, :year, :brand, :model, :reserved)
+    params.require(:motorcycle).permit(:picture, :category_id, :rental_price, :year, :brand, :model, :reserved
   end
 
   def reserved_params

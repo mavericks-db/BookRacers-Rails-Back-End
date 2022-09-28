@@ -7,16 +7,8 @@ RSpec.describe Api::V1::SessionsController, type: :request do
         login
       end
 
-      it 'returns http success' do
-        expect(response).to have_http_status(:ok)
-      end
-
-      it 'assigns all categories to @categories' do
-        expect(assigns(:categories)).to_not eq(Category.all)
-      end
-
-      it 'gives an empty array' do
-        expect(response.body).to eq '[]'
+      it 'returns http unauthorized' do
+        expect(response).to have_http_status(:unauthorized)
       end
     end
 

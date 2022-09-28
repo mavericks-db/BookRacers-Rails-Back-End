@@ -1,58 +1,43 @@
-class Api::V1::MotorcyclesController < ApplicationController
-  before_action :logged_in
+require 'rails_helper'
 
-  def index
-    motorcycles = Motorcycle.all.order(created_at: :desc).includes(%i[picture_attachment reservations])
-    if motorcycles
-      render json: motorcycles, include: [:reservations]
-    else
-      render json: { error: 'No motorcycles yet' }
+RSpec.describe Api::V1::MotorcyclesController, type: :request do
+  describe 'GET #index' do
+    context 'User is not authenticated' do
+      before :each do
+        get api_v1_motorcycles_path
+      end
+
+      it 'returns http success' do
+        expect(response).to have_http_status(:forbidden)
+      end
+
+      it 'assigns all categories to @categories' do
+        expect(assigns(:categories)).to_not eq(Category.all)
+      end
+
+      it 'gives an error message' do
+        expect(response.body).to eq '{"error":"You are not logged in"}'
+      end
     end
-  end
 
-  def show
-    motorcycle = Motorcycle.find_by_id(params[:id])
-    if motorcycle
-      render json: motorcycle, include: [:reservations]
-    else
-      render json: { error: 'Unable to find motorcycle' }
-    end
-  end
+    # context 'User is authenticated' do
+    #   before :each do
+    #     auth_token = signup
+    #     headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+    #     get api_v1_motorcycles_path, headers:
+    #   end
 
-  def create
-    motorcycle = Motorcycle.new(motorcycle_params)
-    if motorcycle.save
-      render json: { message: 'Motorcycle created successfully' }
-    else
-      render json: { error: 'Error creating motorcycle' }
-    end
-  end
+    #   it 'returns http success' do
+    #     expect(response).to have_http_status(:ok)
+    #   end
 
-  def destroy
-    motorcycle = Motorcycle.find_by_id(params[:id])
-    if motorcycle.destroy
-      render json: { message: 'Motorcycle deleted successfully' }
-    else
-      render json: { error: 'Error deleting motorcycle' }
-    end
-  end
+    #   it 'redirects to the home page' do
+    #     expect(current_path).to eq(api_v1_motorcycles_path)
+    #   end
 
-  def update
-    motorcycle = Motorcycle.find_by_id(params[:id])
-    if motorcycle.update(reserved_params)
-      render json: { message: 'Motorcycle updated successfully' }
-    else
-      render json: { error: 'Error updating motorcycle' }
-    end
-  end
-
-  private
-
-  def motorcycle_params
-    params.require(:motorcycle).permit(:image, :category_id, :rental_price, :year, :brand, :model, :reserved, :picture)
-  end
-
-  def reserved_params
-    params.require(:motorcycle).permit(:reserved, :id)
+    #   it 'assigns all categories to @categories' do
+    #     expect(@categories).to eq(Category.all)
+    #   end
+    # end
   end
 end

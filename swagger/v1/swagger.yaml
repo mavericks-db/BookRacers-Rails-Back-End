@@ -9,6 +9,8 @@ paths:
       summary: list categories
       tags:
       - Categories
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -24,6 +26,8 @@ paths:
       summary: show category
       tags:
       - Categories
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -32,6 +36,8 @@ paths:
       summary: create category
       tags:
       - Categories
+      security:
+      - bearer_auth: []
       parameters: []
       responses:
         '200':
@@ -57,6 +63,8 @@ paths:
       summary: delete category
       tags:
       - Categories
+      security:
+      - bearer_auth: []
       parameters: []
       responses:
         '200':
@@ -79,6 +87,8 @@ paths:
       summary: list motorcycles
       tags:
       - Motorcycles
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -94,6 +104,8 @@ paths:
       summary: show motorcycle
       tags:
       - Motorcycles
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -102,6 +114,8 @@ paths:
       summary: create motorcycle
       tags:
       - Motorcycles
+      security:
+      - bearer_auth: []
       parameters: []
       responses:
         '200':
@@ -142,6 +156,8 @@ paths:
       summary: delete motorcycle
       tags:
       - Motorcycles
+      security:
+      - bearer_auth: []
       parameters: []
       responses:
         '200':
@@ -161,6 +177,8 @@ paths:
       summary: update motorcycle
       tags:
       - Motorcycles
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -169,6 +187,8 @@ paths:
       summary: list reservations
       tags:
       - Reservations
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -184,6 +204,8 @@ paths:
       summary: show reservation
       tags:
       - Reservations
+      security:
+      - bearer_auth: []
       responses:
         '200':
           description: successful
@@ -192,6 +214,8 @@ paths:
       summary: create reservation
       tags:
       - Reservations
+      security:
+      - bearer_auth: []
       parameters: []
       responses:
         '200':
@@ -209,9 +233,9 @@ paths:
                 total_price:
                   type: integer
                 start_date:
-                  type: date
+                  type: string
                 end_date:
-                  type: date
+                  type: string
                 city:
                   type: string
               required:
@@ -226,9 +250,22 @@ paths:
       summary: delete reservation
       tags:
       - Reservations
+      security:
+      - bearer_auth: []
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
   "/api/v1/users":
     get:
       summary: list users
@@ -287,6 +324,12 @@ paths:
                   type: string
               required:
               - username
+components:
+  securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+      bearer_format: JWT
 tags:
 - name: Users
   description: User API endpoint requests
@@ -297,7 +340,7 @@ tags:
 - name: Reservations
   description: Reservation API endpoint requests
 servers:
-- url: https://{defaultHost}
+- url: http://{defaultHost}
   variables:
     defaultHost:
       default: localhost:3001

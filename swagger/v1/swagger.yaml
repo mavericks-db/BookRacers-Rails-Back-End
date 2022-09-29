@@ -32,17 +32,48 @@ paths:
       summary: create category
       tags:
       - Categories
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                catname:
+                  type: string
+                image:
+                  type: string
+                picture:
+                  type: string
+              required:
+              - catname
+              - image
+              - picture
   "/api/v1/del_category":
     delete:
       summary: delete category
       tags:
       - Categories
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                catname:
+                  type: string
+                id:
+                  type: integer
+              required:
+              - id
+              - catname
   "/api/v1/motorcycles":
     get:
       summary: list motorcycles
@@ -71,17 +102,60 @@ paths:
       summary: create motorcycle
       tags:
       - Motorcycles
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                category_id:
+                  type: string
+                rental_price:
+                  type: integer
+                year:
+                  type: string
+                brand:
+                  type: string
+                model:
+                  type: string
+                reserved:
+                  type: boolean
+                picture:
+                  type: string
+              required:
+              - image
+              - category_id
+              - rental_price
+              - year
+              - brand
+              - model
+              - reserved
+              - picture
   "/api/v1/del_motorcycle":
     delete:
       summary: delete motorcycle
       tags:
       - Motorcycles
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
   "/api/v1/update_motorcycle":
     patch:
       summary: update motorcycle
@@ -118,9 +192,35 @@ paths:
       summary: create reservation
       tags:
       - Reservations
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                motorcycle_id:
+                  type: integer
+                user_id:
+                  type: integer
+                total_price:
+                  type: integer
+                start_date:
+                  type: date
+                end_date:
+                  type: date
+                city:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - total_price
+              - start_date
+              - end_date
+              - city
   "/api/v1/del_reservation":
     delete:
       summary: delete reservation
@@ -142,17 +242,51 @@ paths:
       summary: create user
       tags:
       - Users
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                admin:
+                  type: boolean
+              required:
+              - name
+              - username
+              - email
+              - password
+              - admin
   "/api/v1/login":
     post:
       summary: login user
       tags:
       - Users
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
 tags:
 - name: Users
   description: User API endpoint requests

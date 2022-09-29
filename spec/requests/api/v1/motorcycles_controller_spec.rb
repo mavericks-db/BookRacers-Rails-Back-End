@@ -87,21 +87,5 @@ RSpec.describe Api::V1::MotorcyclesController, type: :request do
         expect(response.body).to eq '{"error":"You are not logged in"}'
       end
     end
-
-    # context 'User is authenticated' do
-    #   before :each do
-    #     auth_token = signup
-    #     headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
-    #     get api_v1_motorcycles_path(1), headers:
-    #   end
-
-    #   it 'returns http success' do
-    #     expect(response).to have_http_status(:ok)
-    #   end
-
-    #   it 'redirects to the motorcycle show page' do
-    #     expect(current_path).to eq(api_v1_motorcycles_path(1))
-    #   end
-    # end
   end
 end

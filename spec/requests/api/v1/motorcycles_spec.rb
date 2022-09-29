@@ -4,6 +4,7 @@ RSpec.describe 'api/v1/motorcycles', type: :request do
   path '/api/v1/motorcycles' do
     get('list motorcycles') do
       tags 'Motorcycles'
+      security [{ bearer_auth: [] }] 
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
@@ -23,6 +24,7 @@ RSpec.describe 'api/v1/motorcycles', type: :request do
 
     get('show motorcycle') do
       tags 'Motorcycles'
+      security [{ bearer_auth: [] }] 
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -41,6 +43,7 @@ RSpec.describe 'api/v1/motorcycles', type: :request do
   path '/api/v1/add_motorcycle' do
     post('create motorcycle') do
       tags 'Motorcycles'
+      security [{ bearer_auth: [] }] 
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :motorcycle, in: :body, schema: {
@@ -72,6 +75,7 @@ RSpec.describe 'api/v1/motorcycles', type: :request do
   path '/api/v1/del_motorcycle' do
     delete('delete motorcycle') do
       tags 'Motorcycles'
+      security [{ bearer_auth: [] }] 
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :motorcycle, in: :body, schema: {
@@ -96,6 +100,7 @@ RSpec.describe 'api/v1/motorcycles', type: :request do
   path '/api/v1/update_motorcycle' do
     patch('update motorcycle') do
       tags 'Motorcycles'
+      security [{ bearer_auth: [] }] 
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {

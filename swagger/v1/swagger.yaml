@@ -1,12 +1,14 @@
 ---
 openapi: 3.0.1
 info:
-  title: API V1
+  title: BookRacers API
   version: v1
 paths:
   "/api/v1/categories":
     get:
       summary: list categories
+      tags:
+      - Categories
       responses:
         '200':
           description: successful
@@ -20,18 +22,71 @@ paths:
         type: string
     get:
       summary: show category
+      tags:
+      - Categories
       responses:
         '200':
           description: successful
   "/api/v1/add_category":
     post:
       summary: create category
+      tags:
+      - Categories
       responses:
         '200':
           description: successful
   "/api/v1/del_category":
     delete:
       summary: delete category
+      tags:
+      - Categories
+      responses:
+        '200':
+          description: successful
+  "/api/v1/motorcycles":
+    get:
+      summary: list motorcycles
+      tags:
+      - Motorcycles
+      responses:
+        '200':
+          description: successful
+  "/api/v1/motorcycles/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show motorcycle
+      tags:
+      - Motorcycles
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_motorcycle":
+    post:
+      summary: create motorcycle
+      tags:
+      - Motorcycles
+      responses:
+        '200':
+          description: successful
+  "/api/v1/del_motorcycle":
+    delete:
+      summary: delete motorcycle
+      tags:
+      - Motorcycles
+      responses:
+        '200':
+          description: successful
+  "/api/v1/update_motorcycle":
+    patch:
+      summary: update motorcycle
+      tags:
+      - Motorcycles
       responses:
         '200':
           description: successful

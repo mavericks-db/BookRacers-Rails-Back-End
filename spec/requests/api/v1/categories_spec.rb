@@ -5,8 +5,8 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/categories' do
 
     get('list categories') do
+      tags 'Categories'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -24,6 +24,7 @@ RSpec.describe 'api/v1/categories', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show category') do
+      tags 'Categories'
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -42,8 +43,8 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/add_category' do
 
     post('create category') do
+      tags 'Categories'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -59,8 +60,8 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/del_category' do
 
     delete('delete category') do
+      tags 'Categories'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

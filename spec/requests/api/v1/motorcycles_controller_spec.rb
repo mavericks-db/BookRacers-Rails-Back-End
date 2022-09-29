@@ -88,4 +88,20 @@ RSpec.describe Api::V1::MotorcyclesController, type: :request do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    context 'User is not authenticated' do
+      before :each do
+        create_motorcycle
+      end
+
+      it 'returns http success' do
+        expect(response).to have_http_status(:forbidden)
+      end
+
+      it 'gives an error message' do
+        expect(response.body).to eq '{"error":"You are not logged in"}'
+      end
+    end
+  end
 end

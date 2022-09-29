@@ -11,7 +11,7 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.where(id: params[:id])
+    @category = Category.where(id: params[:id]).includes([:picture_attachment])
     if @category
       render json: @category
     else

@@ -3,7 +3,7 @@ class Motorcycle < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations
 
-  validates :brand, :model, :year, :image, presence: true
+  validates :brand, :model, :year, presence: true
   validates :rental_price, presence: true, numericality: { greater_than: 0 }
 
   has_one_attached :picture

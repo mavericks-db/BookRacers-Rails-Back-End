@@ -12,7 +12,7 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       end
 
       it 'gives an error message' do
-        expect(response.body).to eq "{\"reservation\":[]}"
+        expect(response.body).to eq '{"reservation":[]}'
       end
     end
 
@@ -32,7 +32,7 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       end
 
       it 'assigns all categories to @categories' do
-        expect(response.body).to eq "{\"reservation\":[]}"
+        expect(response.body).to eq '{"reservation":[]}'
       end
     end
   end

@@ -92,7 +92,7 @@ RSpec.describe Api::V1::MotorcyclesController, type: :request do
   describe 'DELETE #destroy' do
     context 'User is not authenticated' do
       before :each do
-        create_motorcycle
+        delete api_v1_del_motorcycle_path(1)
       end
 
       it 'returns http success' do

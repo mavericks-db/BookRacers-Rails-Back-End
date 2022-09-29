@@ -43,7 +43,7 @@
     "year": "2011",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2011/Otello 125/Daelim_2011_Otello 125.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+  }
 ]
 
 @supermotards.each do |supermotard|

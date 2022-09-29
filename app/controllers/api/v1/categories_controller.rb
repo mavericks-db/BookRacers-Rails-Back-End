@@ -1,17 +1,17 @@
 class Api::V1::CategoriesController < ApplicationController
-  before_action :logged_in, only: %i[index show]
+  before_action :logged_in
 
   def index
-    @categories = Category.all.includes(%i[motorcycles image_attachment])
+    @categories = Category.includes(%i[motorcycles picture_attachment]).order(created_at: :desc)
     if @categories
-      render json: @categories
+      render json: @categories, status: 200
     else
       render json: { error: 'No categories yet' }
     end
   end
 
   def show
-    @category = Category.where(id: params[:id])
+    @category = Category.where(id: params[:id]).includes([:picture_attachment])
     if @category
       render json: @category
     else
@@ -39,6 +39,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:catname, :img)
+    params.require(:category).permit(:catname, :image, :picture)
   end
 end

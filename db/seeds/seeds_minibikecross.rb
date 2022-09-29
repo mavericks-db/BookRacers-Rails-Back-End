@@ -43,7 +43,7 @@
     "year": "2014",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2014/VS 125/Daelim_2014_VS 125.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+  }
 ]
 
 @minibikecross.each do |mini|

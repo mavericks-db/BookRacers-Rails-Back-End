@@ -25,9 +25,9 @@ RSpec.describe Motorcycle, type: :model do
       @motorcycle.year = nil
       expect(@motorcycle).to_not be_valid
     end
-    it 'should be invalid without an image' do
+    it 'should be valid without an image' do
       @motorcycle.image = nil
-      expect(@motorcycle).to_not be_valid
+      expect(@motorcycle).to be_valid
     end
     it 'should be invalid without a rental price' do
       @motorcycle.rental_price = nil

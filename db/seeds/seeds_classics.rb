@@ -43,7 +43,7 @@
     "year": "2022",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2022/XQ1/Daelim_2022_XQ1.jpg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+  }
 ]
 
 @classics.each do |classic|

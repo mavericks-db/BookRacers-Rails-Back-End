@@ -5,7 +5,7 @@ class Api::V1::SessionsController < ApplicationController
     user = User.find_by_username(user_params[:username])
     if user
       token = issue_token(user)
-      render json: { user: UserSerializer.new(user), jwt: token }
+      render json: { user: UserSerializer.new(user), jwt: token }, status: :ok
     else
       render json: { error: 'Incorrect username or password.' }, status: :unauthorized
     end

@@ -14,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
 
     if user.save
       token = issue_token(user)
-      render json: { user: UserSerializer.new(user), jwt: token }
+      render json: { user: UserSerializer.new(user), jwt: token }, status: :ok
     elsif user.errors.messages
       render json: { error: user.errors.messages }
     else

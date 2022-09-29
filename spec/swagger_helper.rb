@@ -13,12 +13,12 @@ RSpec.configure do |config| # rubocop:todo Metrics/BlockLength
       components: {
         securitySchemes: {
           bearer_auth: {
-          type: :http,
-          scheme: :bearer,
-          bearer_format: :JWT,
-          },
-        },
-      }, 
+            type: :http,
+            scheme: :bearer,
+            bearer_format: :JWT
+          }
+        }
+      },
       tags: [
         {
           name: 'Users',

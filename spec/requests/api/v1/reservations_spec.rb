@@ -5,7 +5,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
     get('list reservations') do
       tags 'Reservations'
 
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
@@ -25,7 +25,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
 
     get('show reservation') do
       tags 'Reservations'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -44,7 +44,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
   path '/api/v1/add_reservation' do
     post('create reservation') do
       tags 'Reservations'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         consumes 'application/json'
 
@@ -81,21 +81,21 @@ RSpec.describe 'api/v1/reservations', type: :request do
   path '/api/v1/del_reservation' do
     delete('delete reservation') do
       tags 'Reservations'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
-        consumes 'application/json'        
+        consumes 'application/json'
 
-        parameter name: :reservation, in: :body, schema: {          
+        parameter name: :reservation, in: :body, schema: {
 
-         type: :object,          
+          type: :object,
 
-         properties: {            
- 
-           id: { type: :integer}  
+          properties: {
 
-         },          
+            id: { type: :integer }
 
-         required: %w[id]  
+          },
+
+          required: %w[id]
 
         }
         after do |example|

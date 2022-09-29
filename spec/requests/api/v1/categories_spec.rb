@@ -4,7 +4,7 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/categories' do
     get('list categories') do
       tags 'Categories'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
@@ -24,7 +24,7 @@ RSpec.describe 'api/v1/categories', type: :request do
 
     get('show category') do
       tags 'Categories'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -43,7 +43,7 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/add_category' do
     post('create category') do
       tags 'Categories'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :category, in: :body, schema: {
@@ -70,7 +70,7 @@ RSpec.describe 'api/v1/categories', type: :request do
   path '/api/v1/del_category' do
     delete('delete category') do
       tags 'Categories'
-      security [{ bearer_auth: [] }] 
+      security [{ bearer_auth: [] }]
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :category, in: :body, schema: {

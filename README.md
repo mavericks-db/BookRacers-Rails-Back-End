@@ -6,7 +6,11 @@
 
 - We also built a simple documentation for this project so users can have an idea on how to use the app.
 
-*** [Link to Frontend App](https://github.com/jssol/bookracers-frontend) ***
+*** [Link to FrontEnd App](https://github.com/jssol/bookracers-frontend) ***
+*** [Link to Live Demo]() ***
+
+*** [Link to BackEnd App](https://github.com/mavericks-db/BookRacers-Rails-Back-End) ***
+*** [Link to Live Demo](https://pacific-garden-78390.herokuapp.com/) ***
 
 ## Kanban Board 📄
 

@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/categories', type: :request do
-
   path '/api/v1/categories' do
-
     get('list categories') do
       tags 'Categories'
       response(200, 'successful') do
@@ -41,10 +39,19 @@ RSpec.describe 'api/v1/categories', type: :request do
   end
 
   path '/api/v1/add_category' do
-
     post('create category') do
       tags 'Categories'
       response(200, 'successful') do
+        consumes 'application/json'
+        parameter name: :category, in: :body, schema: {
+          type: :object,
+          properties: {
+            catname: { type: :string },
+            image: { type: :string },
+            picture: { type: :string }
+          },
+          required: %w[catname image picture]
+        }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -58,10 +65,18 @@ RSpec.describe 'api/v1/categories', type: :request do
   end
 
   path '/api/v1/del_category' do
-
     delete('delete category') do
       tags 'Categories'
       response(200, 'successful') do
+        consumes 'application/json'
+        parameter name: :category, in: :body, schema: {
+          type: :object,
+          properties: {
+            catname: { type: :string },
+            id: { type: :integer }
+          },
+          required: %w[id catname]
+        }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

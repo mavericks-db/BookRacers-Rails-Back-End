@@ -4,17 +4,23 @@
 
 - This is a FullStack Group project and here is the backend service provider for the BookRacer App which helps the frontend users to register(sign up) and login (sign in) using JWT. It also provides API endpoints to read, write, update, and delete data.
 
--- We also built a simple documentation for this project so users can have an idea on how to use the app.
+- We also built a simple documentation for this project so users can have an idea on how to use the app.
 
 *** [Link to Frontend App](https://github.com/jssol/bookracers-frontend) ***
 
+## Kanban Board 📄
+
+- [Kanban Board Link](https://github.com/mavericks-db/BookRacers-Rails-Back-End/projects/1)
+- [Initial State of Kanban Board](https://user-images.githubusercontent.com/98527559/192945812-10be48ed-052b-4009-bdcd-a2eaaf64b545.png)
+- Here in this project, we are a group of five(5) members and we used the Kanban board to manage our tasks and to keep track of our progress.
+
 ## Built With 🛠️
 
-- [ReactJs](https://reactjs.org/)
-- [Ruby on Rails](https://rubyonrails.org/)
-- [PostgresSQL](https://www.postgresql.org/)
-- [Rspec](https://rspec.info/)
-- And some other open source ruby gems
+- [x] [ReactJs](https://reactjs.org/)
+- [x] [Ruby on Rails](https://rubyonrails.org/)
+- [x] [PostgresSQL](https://www.postgresql.org/)
+- [x] [Rspec](https://rspec.info/)
+- [x] And some other open source [ruby gems](https://rubygems.org/)
 
 ## Usage
 

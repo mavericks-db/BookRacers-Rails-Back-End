@@ -15,6 +15,22 @@ def signup
   res['jwt']
 end
 
+def create_motorcycle
+  post api_v1_add_motorcycle_path, params: {
+    motorcycle: {
+      image: 'moto.png',
+      category_id: 1,
+      rental_price: 20,
+      year: 2001,
+      brand: 'Suzuki',
+      model: 'GSX-R 1000',
+      reserved: false,
+      picture: 'moto.png'
+    }
+  }
+  response.body
+end
+
 def login
   signup
   post api_v1_login_path, params: {

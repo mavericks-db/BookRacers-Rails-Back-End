@@ -90,6 +90,45 @@ paths:
       responses:
         '200':
           description: successful
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_reservation":
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/del_reservation":
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
 tags:
 - name: Users
   description: User API endpoint requests

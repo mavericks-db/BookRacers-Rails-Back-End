@@ -43,7 +43,7 @@
     "year": "2017",
     "image": "http://api-motorcycle.makingdatameaningful.com/files/Daelim/2017/Besbi/Daelim_2017_Besbi.jpeg",
     "rental_price": Faker::Number.between(from: 100, to: 200),
-  },
+  }
 ]
 
 @scooters.each do |scooter|

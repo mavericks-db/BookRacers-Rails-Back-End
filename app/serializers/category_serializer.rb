@@ -1,4 +1,9 @@
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id, :catname, :image
+  include Rails.application.routes.url_helpers
+  attributes :id, :catname, :image, :picture
   has_many :motorcycles
+
+  def picture
+    rails_blob_path(object.picture, only_path: true) if object.picture.attached?
+  end
 end

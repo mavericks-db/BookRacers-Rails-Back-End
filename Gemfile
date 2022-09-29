@@ -56,7 +56,6 @@ group :development, :test do
 
   gem 'rails-controller-testing'
 
-  gem 'rswag'
 end
 
 group :development do
@@ -65,3 +64,5 @@ group :development do
 
   gem 'letter_opener_web'
 end
+
+gem 'rswag'

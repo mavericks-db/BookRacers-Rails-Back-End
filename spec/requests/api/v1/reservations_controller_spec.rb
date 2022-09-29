@@ -16,24 +16,24 @@ RSpec.describe Api::V1::ReservationsController, type: :request do
       end
     end
 
-    # context 'User is authenticated' do
-    #   before :each do
-    #     auth_token = signup
-    #     headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
-    #     get api_v1_categories_path, headers:
-    #   end
+    context 'User is authenticated' do
+      before :each do
+        auth_token = signup
+        headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+        get api_v1_reservations_path, headers:
+      end
 
-    #   it 'returns http success' do
-    #     expect(response).to have_http_status(:ok)
-    #   end
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+      end
 
-    #   it 'redirects to the home page' do
-    #     expect(current_path).to eq(api_v1_categories_path)
-    #   end
+      it 'redirects to the home page' do
+        expect(current_path).to eq(api_v1_reservations_path)
+      end
 
-    #   it 'assigns all categories to @categories' do
-    #     expect(@categories).to eq(Category.all)
-    #   end
-    # end
+      it 'assigns all categories to @categories' do
+        expect(response.body).to eq "{\"reservation\":[]}"
+      end
+    end
   end
 end

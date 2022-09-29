@@ -1,42 +1,39 @@
-class Api::V1::ReservationsController < ApplicationController
-  def index
-    @reservations = Reservation.all
-    render json: { reservation: @reservations }
-  end
+require 'rails_helper'
 
-  def show
-    @reserved_motorcycles = Reservation.where(id: params[:id])
-    if @reserved_motorcycles
-      render json: { reservation: @reserved_motorcycles }
-    else
-      render json: { error: 'Unable to find your reservation' }, status: :unprocessable_entity
+RSpec.describe Api::V1::ReservationsController, type: :request do
+  describe 'GET #index' do
+    context 'User is not authenticated' do
+      before :each do
+        get api_v1_reservations_path
+      end
+
+      it 'assigns all categories to @categories' do
+        expect(assigns(:categories)).to_not eq(Reservation.all)
+      end
+
+      it 'gives an error message' do
+        expect(response.body).to eq "{\"reservation\":[]}"
+      end
     end
-  end
 
-  def create
-    # @motorcycle = Motorcycle.find(params[:id])
-    @reservation = Reservation.new(reservation_params)
-    # @reservation.motorcycle_id = @motorcycle.id
-    # @reservation.user_id = current_user.id
-    # @reservation.total_price =
-    if @reservation.save
-      render json: { message: 'reservation created' }, status: :created
-    else
-      render json: { error: 'Unable to create reservation' }, status: :unprocessable_entity
-    end
-  end
+    # context 'User is authenticated' do
+    #   before :each do
+    #     auth_token = signup
+    #     headers = { 'ACCEPT' => 'application/json', 'Authorization' => auth_token }
+    #     get api_v1_categories_path, headers:
+    #   end
 
-  def destroy
-    if Reservation.find(params[:id]).destroy
-      render json: { message: 'reservation deleted' }
-    else
-      render json: { error: 'Unable to delete reservation' }, status: :unprocessable_entity
-    end
-  end
+    #   it 'returns http success' do
+    #     expect(response).to have_http_status(:ok)
+    #   end
 
-  private
+    #   it 'redirects to the home page' do
+    #     expect(current_path).to eq(api_v1_categories_path)
+    #   end
 
-  def reservation_params
-    params.require(:reservation).permit(:motorcycle_id, :user_id, :total_price, :start_date, :end_date, :city)
+    #   it 'assigns all categories to @categories' do
+    #     expect(@categories).to eq(Category.all)
+    #   end
+    # end
   end
 end

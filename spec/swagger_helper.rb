@@ -10,6 +10,15 @@ RSpec.configure do |config| # rubocop:todo Metrics/BlockLength
         version: 'v1'
       },
       paths: {},
+      components: {
+        securitySchemes: {
+          bearer_auth: {
+          type: :http,
+          scheme: :bearer,
+          bearer_format: :JWT,
+          },
+        },
+      }, 
       tags: [
         {
           name: 'Users',
@@ -30,7 +39,7 @@ RSpec.configure do |config| # rubocop:todo Metrics/BlockLength
       ],
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
               default: 'localhost:3001'

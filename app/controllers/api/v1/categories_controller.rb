@@ -4,7 +4,7 @@ class Api::V1::CategoriesController < ApplicationController
   def index
     @categories = Category.includes(%i[motorcycles picture_attachment]).order(created_at: :desc)
     if @categories
-      render json: @categories
+      render json: @categories, status: 200
     else
       render json: { error: 'No categories yet' }
     end

@@ -22,6 +22,24 @@ RSpec.configure do |config|
         version: 'v1'
       },
       paths: {},
+      tags: [
+            {
+                name: 'Users',
+                description: 'User API endpoint requests'
+            },
+            {
+                name: 'Categories',
+                description: 'Category API endpoint requests'
+            },
+           {
+                name: 'Motorcycles',
+                description: 'Motorcycle API endpoint requests'
+            },
+           {
+                name: 'Reservations',
+                description: 'Reservation API endpoint requests'
+            },
+           ],
       servers: [
         {
           url: 'https://{defaultHost}',

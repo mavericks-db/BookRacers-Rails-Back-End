@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&family=Roboto:wght@400;700&family=Square+Peg&display=swap");
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./vespa.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  background-color: hsl(47deg, 100%, 50%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+body .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+  background-color: hsl(74, 85%, 41%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 5em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-weight: 700;
+}

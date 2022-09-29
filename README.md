@@ -1,21 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# BookRacers App
+# BookRacers Web App
 
-This is a FullStack Group project and Here is the backend service provider for the BookRacer App which helps the frontend users to register(sign up) and login (sign in) using JWT. It also provides API endpoint to read, write, update, and delete datas.
+- This is a FullStack Group project and here is the backend service provider for the BookRacer App which helps the frontend users to register(sign up) and login (sign in) using JWT. It also provides API endpoints to read, write, update, and delete data.
 
--- We also built a simple documentation for this project so users can have an idea on how to use the app. 
+-- We also built a simple documentation for this project so users can have an idea on how to use the app.
 
 *** [Link to Frontend App](https://github.com/jssol/bookracers-frontend) ***
 
+## Built With 🛠️
 
-
-## Built With
-
-- ReactJs
-- Ruby on Rails
-- PostgresSQL
-- Rspec
+- [ReactJs](https://reactjs.org/)
+- [Ruby on Rails](https://rubyonrails.org/)
+- [PostgresSQL](https://www.postgresql.org/)
+- [Rspec](https://rspec.info/)
 - And some other open source ruby gems
 
 ## Usage
@@ -40,18 +38,15 @@ N/A
 
 👤 **Mavericks Balitaan**
 
-- GitHub: [@githubhandle]https://github.com/mavericks-db
-- LinkedIn:[@linkedInhandle] https://www.linkedin.com/in/mavericks-db/
-- Twitter: [@twitterhandle]https://twitter.com/mavericks_db
-- AngelList: [@AngelListhandle]https://angel.co/u/mavericks-db
-- Gmail: [@Gmailhandle]balitaanmavericks@gmail.com 
+- GitHub: [@mavericks-db](https://github.com/mavericks-db)
+- Twitter: [@mavericks_db](https://twitter.com/mavericks_db)
+- LinkedIn:[@mavericks-db](https://www.linkedin.com/in/mavericks-db/)
 
 👤 **Jonathan Sivahera**
 
 - GitHub: [@jssol](https://github.com/jssol)
 - Twitter: [@jsivahera](https://twitter.com/jsivahera)
 - LinkedIn: [jsivahera](https://www.linkedin.com/in/jsivahera/)
-
 
 👤 **Anthony Mwenyo**
 
@@ -84,7 +79,12 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-The design has been inspired by: [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers
+- Coding Partners
+
+The design has been inspired by: [Murat Korkmaz on Behance](https://www.behance.net/muratk)
+
 
 ## 📝 License
 

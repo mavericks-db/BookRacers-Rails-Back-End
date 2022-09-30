@@ -42,8 +42,6 @@ gem 'jwt'
 
 gem 'active_model_serializers'
 
-gem 'cancancan'
-
 gem 'rake'
 
 group :development, :test do

@@ -7,7 +7,7 @@
 - We also built a simple documentation for this project so users can have an idea on how to use the app.
 
 *** [Link to FrontEnd App](https://github.com/jssol/bookracers-frontend) ***
-*** [Link to Live Demo]() ***
+*** [Link to Live Demo](https://beautiful-alfajores-92bbef.netlify.app) ***
 
 *** [Link to BackEnd App](https://github.com/mavericks-db/BookRacers-Rails-Back-End) ***
 *** [Link to Live Demo](https://pacific-garden-78390.herokuapp.com/) ***
@@ -33,20 +33,19 @@
 ## Usage
 
 Run the following commands:</br>
-`git clone https://github.com/jssol/bookracers-frontend.git`</br>
-`cd b\BookRacers`</br>
+`git clone git@github.com:mavericks-db/BookRacers-Rails-Back-End.git`</br>
+`cd BookRacers-Rails-Back-End`</br>
 `bundle install`</br>
+`rails db:create`</br>
+`rails db:migrate`</br>
+`rails db:seed`</br>
 `rails s`</br>
-Open a browser and go to: `https://localhost:3000` to view the app.
+Open a browser and go to: `https://localhost:3001` to view the backend app.
 
 ## Testing
 
 `cd BookRacers`</br>
 run `rspec`
-
-## [Go Live]()
-
-N/A
 
 ## Authors
 

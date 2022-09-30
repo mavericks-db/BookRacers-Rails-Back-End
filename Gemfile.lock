@@ -81,7 +81,6 @@ GEM
     bullet (7.0.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
-    cancancan (3.4.0)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.10)
@@ -139,8 +138,6 @@ GEM
       net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.1)
@@ -249,14 +246,12 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1.7)
   bootsnap
   bullet
-  cancancan
   debug
   faker
   image_processing (~> 1.2)

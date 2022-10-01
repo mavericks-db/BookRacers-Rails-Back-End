@@ -1,0 +1,346 @@
+---
+openapi: 3.0.1
+info:
+  title: BookRacers API
+  version: v1
+paths:
+  "/api/v1/categories":
+    get:
+      summary: list categories
+      tags:
+      - Categories
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/categories/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show category
+      tags:
+      - Categories
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_category":
+    post:
+      summary: create category
+      tags:
+      - Categories
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                catname:
+                  type: string
+                image:
+                  type: string
+                picture:
+                  type: string
+              required:
+              - catname
+              - image
+              - picture
+  "/api/v1/del_category":
+    delete:
+      summary: delete category
+      tags:
+      - Categories
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                catname:
+                  type: string
+                id:
+                  type: integer
+              required:
+              - id
+              - catname
+  "/api/v1/motorcycles":
+    get:
+      summary: list motorcycles
+      tags:
+      - Motorcycles
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/motorcycles/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show motorcycle
+      tags:
+      - Motorcycles
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_motorcycle":
+    post:
+      summary: create motorcycle
+      tags:
+      - Motorcycles
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                category_id:
+                  type: string
+                rental_price:
+                  type: integer
+                year:
+                  type: string
+                brand:
+                  type: string
+                model:
+                  type: string
+                reserved:
+                  type: boolean
+                picture:
+                  type: string
+              required:
+              - image
+              - category_id
+              - rental_price
+              - year
+              - brand
+              - model
+              - reserved
+              - picture
+  "/api/v1/del_motorcycle":
+    delete:
+      summary: delete motorcycle
+      tags:
+      - Motorcycles
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
+  "/api/v1/update_motorcycle":
+    patch:
+      summary: update motorcycle
+      tags:
+      - Motorcycles
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_reservation":
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                motorcycle_id:
+                  type: integer
+                user_id:
+                  type: integer
+                total_price:
+                  type: integer
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+                city:
+                  type: string
+              required:
+              - user_id
+              - motorcycle_id
+              - total_price
+              - start_date
+              - end_date
+              - city
+  "/api/v1/del_reservation":
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
+  "/api/v1/users":
+    get:
+      summary: list users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+  "/api/v1/signup":
+    post:
+      summary: create user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                admin:
+                  type: boolean
+              required:
+              - name
+              - username
+              - email
+              - password
+              - admin
+  "/api/v1/login":
+    post:
+      summary: login user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+components:
+  securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+      bearer_format: JWT
+tags:
+- name: Users
+  description: User API endpoint requests
+- name: Categories
+  description: Category API endpoint requests
+- name: Motorcycles
+  description: Motorcycle API endpoint requests
+- name: Reservations
+  description: Reservation API endpoint requests
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3001
